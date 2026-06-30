@@ -37,6 +37,10 @@ pipeline {
     }
 
     post {
+        always {
+            echo 'Below steps will always run irrespective of the pipeline status'
+            cleanWs()
+        }
         success {
         // One or more steps need to be included within each condition's block.
         echo 'the deployment has worked'
